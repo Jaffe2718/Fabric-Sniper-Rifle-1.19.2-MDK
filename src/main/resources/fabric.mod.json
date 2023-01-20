@@ -9,7 +9,8 @@
   ],
   "contact": {
     "homepage": "https://github.com/Jaffe2718",
-    "sources": "https://github.com/Jaffe2718/Fabric-Sniper-Rifle-1.19.2-MDK"
+    "sources": "https://github.com/Jaffe2718/Fabric-Sniper-Rifle-1.19.2-MDK",
+    "issues": "https://github.com/Jaffe2718/Fabric-Sniper-Rifle-1.19.2-MDK/issues"
   },
   "license": "MIT",
   "icon": "assets/sniperrifle/icon.png",
