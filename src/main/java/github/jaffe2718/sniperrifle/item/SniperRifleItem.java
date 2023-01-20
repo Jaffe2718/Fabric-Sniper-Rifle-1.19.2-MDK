@@ -82,7 +82,7 @@ public class SniperRifleItem extends SpyglassItem {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (isCharged(stack)) {
+        if (isCharged(stack)) {                // 开火
             if (!world.isClient) {             // Server端生成实体
                 if (user instanceof ServerPlayerEntity player && !player.isCreative()) stack.damage(1, Random.create(), player);
                 BulletEntity bullet = new BulletEntity(world, user);
@@ -98,7 +98,8 @@ public class SniperRifleItem extends SpyglassItem {
             world.playSound(user.getX(), user.getY(), user.getZ(),  // 开火音效
                     SoundRegister.SNIPER_RIFLE_FIRE, SoundCategory.PLAYERS,
                     1.5F, 1.0F, true);
-
+            user.setPitch(user.getPitch() - 6.0F);                                         // 垂直后坐力
+            user.setHeadYaw(user.getYaw() + (new java.util.Random()).nextFloat() * 2 - 1.0F);  // 水平后坐力
             setCharged(stack, false);
             setLoading(stack, false);
             setWatching(stack, false);
