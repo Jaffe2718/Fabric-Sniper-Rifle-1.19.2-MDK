@@ -60,3 +60,7 @@ by Jaffe2718
 Fabric API    [Fabric API - MC百科|最大的Minecraft中文MOD百科](https://www.mcmod.cn/class/3124.html)
 
 Fabric WIKI    [start [Fabric Wiki] (fabricmc.net)](https://fabricmc.net/wiki/doku.php)
+
+## 联系方式
+
+[bilibili个人主页](https://space.bilibili.com/1671742926)
