@@ -1,0 +1,26 @@
+{
+  "bullet_hit": {
+    "subtitle": "sound.sniperrifle.bullet_hit",
+    "sounds": [
+      "sniperrifle:bullet_hit"
+    ]
+  },
+  "sniper_rifle_fire": {
+    "subtitle": "sound.sniperrifle.sniper_rifle_fire",
+    "sounds": [
+      "sniperrifle:sniper_rifle_fire"
+    ]
+  },
+  "sniper_rifle_loaded": {
+    "subtitle": "sound.sniperrifle.sniper_rifle_loaded",
+    "sounds": [
+      "sniperrifle:sniper_rifle_load"
+    ]
+  },
+  "sniper_rifle_loading": {
+    "subtitle": "sound.sniperrifle.sniper_rifle_loading",
+    "sounds": [
+      "sniperrifle:sniper_rifle_load"
+    ]
+  }
+}

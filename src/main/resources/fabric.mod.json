@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "sniperrifle",
+  "version": "${version}",
+  "name": "Sniper Rifle",
+  "description": "Sniper Rifle Mod for Minecraft Fabric",
+  "authors": [
+    "Jaffe2718"
+  ],
+  "contact": {
+    "website": "https://github.com/Jaffe2718",
+    "repository": "https://github.com/Jaffe2718/Fabric-Sniper-Rifle-1.19.2-MDK"
+  },
+  "license": "MIT",
+  "icon": "assets/sniperrifle/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "github.jaffe2718.sniperrifle.client.SniperRifleClient"
+    ],
+    "main": [
+      "github.jaffe2718.sniperrifle.SniperRifle"
+    ]
+  },
+  "mixins": [
+    "sniperrifle.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": ">=1.19.1"
+  }
+}
