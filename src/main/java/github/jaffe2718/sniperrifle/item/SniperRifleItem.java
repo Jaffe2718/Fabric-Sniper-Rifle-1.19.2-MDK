@@ -1,7 +1,6 @@
 package github.jaffe2718.sniperrifle.item;
 
 
-import github.jaffe2718.sniperrifle.SniperRifle;
 import github.jaffe2718.sniperrifle.entity.BulletEntity;
 import github.jaffe2718.sniperrifle.register.SoundRegister;
 import net.minecraft.entity.LivingEntity;
