@@ -1,5 +1,6 @@
 {
   "item.sniperrifle.sniper_rifle": "栓动狙击步枪",
+  "item.sniperrifle.bullet": "12.7mm口径子弹",
   "sound.sniperrifle.bullet_hit": "子弹击中方块",
   "sound.sniperrifle.sniper_rifle_fire": "栓动狙击步枪: 射击",
   "sound.sniperrifle.sniper_rifle_loaded": "栓动狙击步枪: 装填完成",

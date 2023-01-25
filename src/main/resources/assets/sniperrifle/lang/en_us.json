@@ -1,5 +1,6 @@
 {
   "item.sniperrifle.sniper_rifle": "Sniper Rifle",
+  "item.sniperrifle.bullet": "12.7mm Caliber Bullet",
   "sound.sniperrifle.bullet_hit": "Bullet hit the block",
   "sound.sniperrifle.sniper_rifle_fire": "Sniper rifle shooting",
   "sound.sniperrifle.sniper_rifle_loaded": "Sniper rifle loaded",

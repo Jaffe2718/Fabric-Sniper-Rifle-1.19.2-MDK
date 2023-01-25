@@ -2,6 +2,7 @@ package github.jaffe2718.sniperrifle.item;
 
 
 import github.jaffe2718.sniperrifle.entity.BulletEntity;
+import github.jaffe2718.sniperrifle.register.ItemRegister;
 import github.jaffe2718.sniperrifle.register.SoundRegister;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -60,7 +61,7 @@ public class SniperRifleItem extends SpyglassItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         setLoading(user.getStackInHand(hand),
                 !isCharged(user.getStackInHand(hand)) &&
-                    (user.getInventory().contains(new ItemStack(Items.GUNPOWDER)) || user.isCreative()));
+                    (user.getInventory().contains(new ItemStack(ItemRegister.BULLET)) || user.isCreative()));
         setWatching(user.getStackInHand(hand), false);
         if (isCharged(user.getStackInHand(hand))) {
             // 开镜
@@ -68,7 +69,7 @@ public class SniperRifleItem extends SpyglassItem {
             user.playSound(SoundEvents.ITEM_SPYGLASS_USE, 1.0F, 1.0F);
             user.incrementStat(Stats.USED.getOrCreateStat(super.asItem()));
             return ItemUsage.consumeHeldItem(world, user, hand);
-        } else if (!(user.getInventory().contains(new ItemStack(Items.GUNPOWDER)) || user.isCreative())) {
+        } else if (!(user.getInventory().contains(new ItemStack(ItemRegister.BULLET)) || user.isCreative())) {
             // 没有子弹
             return TypedActionResult.fail(user.getStackInHand(hand));
         } else {
@@ -98,7 +99,7 @@ public class SniperRifleItem extends SpyglassItem {
             world.playSound(user.getX(), user.getY(), user.getZ(),  // 开火音效
                     SoundRegister.SNIPER_RIFLE_FIRE, SoundCategory.PLAYERS,
                     1.5F, 1.0F, true);
-            user.setPitch(user.getPitch() - 6.0F);                                         // 垂直后坐力
+            user.setPitch(user.getPitch() - 6.0F);                                             // 垂直后坐力
             user.setHeadYaw(user.getYaw() + (new java.util.Random()).nextFloat() * 2 - 1.0F);  // 水平后坐力
             setCharged(stack, false);
             setLoading(stack, false);
@@ -112,7 +113,7 @@ public class SniperRifleItem extends SpyglassItem {
         } else if (isLoading(stack) && remainingUseTicks <= 1175) {
             if (user instanceof PlayerEntity player && !player.isCreative()) {   // 非创造玩家
                 player.getInventory().remove(
-                        (stuck_) -> {return stuck_.getItem().equals(Items.GUNPOWDER); },
+                        (stuck_) -> {return stuck_.getItem().equals(ItemRegister.BULLET); },
                         1,
                         player.getInventory()
                 ); // 消耗火药

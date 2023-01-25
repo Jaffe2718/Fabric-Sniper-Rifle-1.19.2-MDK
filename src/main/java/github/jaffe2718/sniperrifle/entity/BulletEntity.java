@@ -1,13 +1,19 @@
 package github.jaffe2718.sniperrifle.entity;
 
 import github.jaffe2718.sniperrifle.SniperRifle;
+import github.jaffe2718.sniperrifle.register.ItemRegister;
 import github.jaffe2718.sniperrifle.register.SoundRegister;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -21,6 +27,7 @@ import java.util.Random;
 
 
 public class BulletEntity extends ThrownItemEntity {
+
     public BulletEntity(EntityType<? extends BulletEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -35,14 +42,21 @@ public class BulletEntity extends ThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return Items.POLISHED_BLACKSTONE_BUTTON.asItem();
+        return Items.POLISHED_BLACKSTONE_BUTTON;
     }
 
     @Override
     protected void onEntityHit(EntityHitResult result) {
         super.onEntityHit(result);
         Entity target = result.getEntity();
-        target.damage(DamageSource.thrownProjectile(this, this.getOwner()), 20.0F);
+        float damage = 20.0F;
+        for (ItemStack armorStuck: target.getArmorItems())
+        {
+            if (armorStuck.getItem() instanceof ArmorItem armor) {      // 盔甲减伤 和 弹射物保护减伤
+                damage -= (armor.getProtection() + EnchantmentHelper.getLevel(Enchantments.PROJECTILE_PROTECTION, armorStuck)) / 2.0F;
+            }
+        }
+        target.damage(DamageSource.thrownProjectile(this, this.getOwner()), damage);
     }
 
     @Override
@@ -61,7 +75,7 @@ public class BulletEntity extends ThrownItemEntity {
             Random rd = new Random();
             serverWorld.spawnParticles(ParticleTypes.CRIT,
                     hitPos.x, hitPos.y, hitPos.z,
-                    15,
+                    16,
                     rd.nextDouble()-0.5D, rd.nextDouble()-0.5D, rd.nextDouble()-0.5D,
                     0.25D
             );
