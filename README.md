@@ -43,7 +43,7 @@ by Jaffe2718
 > 
 > 2. 安装对应版本的 [Fabric API](https://www.mcmod.cn/class/3124.html)
 > 
-> 3. 安装模组 `sniperrifle-1.0-SNAPSHOT.jar`
+> 3. 安装模组 `sniperrifle-1.2.0.jar`
 > 
 > #### 玩法说明
 > 
