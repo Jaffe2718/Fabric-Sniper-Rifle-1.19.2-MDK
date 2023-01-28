@@ -19,15 +19,23 @@ public class SniperRifle implements ModInitializer {
 
     public static Logger LOGGER = LoggerFactory.getLogger(ModID);
 
+    /**
+     * 注册子弹实体TYPE
+     */
     public static final EntityType<BulletEntity> BULLET = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(SniperRifle.ModID, "bullet"),
             FabricEntityTypeBuilder.<BulletEntity>create(SpawnGroup.MISC, BulletEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
-                    .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+                    .disableSaving()
+                    .trackRangeBlocks(32)
+                    .trackedUpdateRate(8) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
                     .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
     );
 
+    /**
+     * 调用声音事件和物品的注册
+     */
     @Override
     public void onInitialize() {
         SoundRegister.register();

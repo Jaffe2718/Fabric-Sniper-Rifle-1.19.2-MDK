@@ -5,6 +5,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+/**
+ * 统一注册模组的声音事件*/
 public class SoundRegister {
 
     public static final SoundEvent BULLET_HIT = new SoundEvent(new Identifier(SniperRifle.ModID, "bullet_hit"));

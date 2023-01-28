@@ -1,13 +1,11 @@
 package github.jaffe2718.sniperrifle.entity;
 
 import github.jaffe2718.sniperrifle.SniperRifle;
-import github.jaffe2718.sniperrifle.register.ItemRegister;
 import github.jaffe2718.sniperrifle.register.SoundRegister;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
@@ -23,6 +21,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
 import java.util.Random;
 
 

@@ -12,11 +12,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 
 @Mixin(PlayerEntity.class)
-public abstract class SniperRifleMixin {
+public abstract class PlayerEntityMixin {
 
+    /**
+     * 访问 PlayerEntity.getHandItems()
+     */
     @Shadow
     public abstract Iterable<ItemStack> getHandItems();
 
+    /**
+     *  修改 PlayerEntity.isUsingSpyglass()
+     *  使游戏判定开镜的玩家正在使用望远镜
+     *  因此直接调用望远镜的开镜效果
+     */
     @Inject(at = @At("RETURN"), method = "isUsingSpyglass", cancellable = true)
     private void isUsingGlass(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(cir.getReturnValue() || SniperRifleItem.isWatching(getHandItems().iterator().next()));

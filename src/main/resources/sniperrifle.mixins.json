@@ -3,7 +3,9 @@
   "minVersion": "0.8",
   "package": "github.jaffe2718.sniperrifle.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": ["SniperRifleMixin"],
+  "mixins": [
+      "PlayerEntityMixin"
+  ],
   "client": [],
   "injectors": {
     "defaultRequire": 1
