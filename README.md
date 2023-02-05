@@ -70,6 +70,10 @@ Fabric API    [Fabric API - MC百科|最大的Minecraft中文MOD百科](https://
 
 Fabric WIKI    [start [Fabric Wiki] (fabricmc.net)](https://fabricmc.net/wiki/doku.php)
 
+## 小贴士
+
+本模组配合[cobrasrock](https://github.com/cobrasrock/)大神的[spyglass-zoom](https://github.com/cobrasrock/spyglass-zoom)模组就可以实现瞄准镜调焦，玩法更佳！
+
 ## 联系方式
 
 [bilibili个人主页](https://space.bilibili.com/1671742926)
