@@ -1,10 +1,10 @@
 # 狙击枪模组 1.4.0 说明文档
 
+by Jaffe2718
+
 ![image](src/main/resources/assets/sniperrifle/icon.png)
 
 ## 配置
-
-by Jaffe2718
 
 > ### 开发环境
 > 
